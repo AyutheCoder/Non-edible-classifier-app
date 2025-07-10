@@ -4,9 +4,9 @@ import pandas as pd
 from tensorflow.keras.models import load_model
 from tensorflow.keras.preprocessing.image import load_img, img_to_array
 from tensorflow.keras.applications.mobilenet_v2 import preprocess_input
+from tensorflow.keras.preprocessing.text import Tokenizer
 from tensorflow.keras.preprocessing.sequence import pad_sequences
 import os
-import pickle
 import time
 
 # Load CSV data
@@ -17,16 +17,31 @@ except FileNotFoundError:
     st.error("CSV file not found. Please check the path.")
     st.stop()
 
-# Load tokenizer
+# Rebuild tokenizer using example or actual descriptions
 @st.cache_resource
 def get_tokenizer():
-    tokenizer_path = os.path.join(os.path.dirname(__file__), 'tokenizer.pkl')
     try:
-        with open(tokenizer_path, "rb") as f:
-            tokenizer = pickle.load(f)
+        tokenizer = Tokenizer(num_words=10000, oov_token="<OOV>")
+        
+        # Option 1: Sample synthetic texts (fallback)
+        sample_texts = [
+            "Used blender, still working",
+            "Plastic toy worn out",
+            "Headphones not functioning",
+            "Repairable electric kettle",
+            "Dead lamp with broken wire"
+        ]
+
+        # Option 2: If 'description' column exists in CSV
+        if 'description' in data_df.columns:
+            corpus = data_df['description'].dropna().astype(str).tolist()
+        else:
+            corpus = sample_texts  # fallback
+
+        tokenizer.fit_on_texts(corpus)
         return tokenizer
     except Exception as e:
-        st.error(f"Failed to load tokenizer: {e}")
+        st.error(f"Tokenizer initialization failed: {e}")
         return None
 
 tokenizer = get_tokenizer()
@@ -64,27 +79,38 @@ years_used = st.slider("Years Used", 1, 10)
 condition = st.selectbox("Condition", ["Working", "Repairable", "Dead"])
 description = st.text_area("Description", "")
 
-max_len = 30  # Must match training
+max_len = 30  # Should match training phase
 
 if st.button("Predict"):
     if uploaded_file is not None:
         st.image(uploaded_file, caption="Uploaded Image", width=350)
 
+        # Find match in CSV
         uploaded_filename = uploaded_file.name
         data_df['image_file'] = data_df['image_path'].apply(lambda x: os.path.basename(str(x)))
         match = data_df[data_df['image_file'] == uploaded_filename]
 
         if not match.empty:
             row = match.iloc[0]
+
+            # Optional: use description input for model prediction
+            sequence = tokenizer.texts_to_sequences([description])
+            padded = pad_sequences(sequence, maxlen=max_len, padding='post')
+
             st.success(f"Condition Score: {row['condition_score']}")
             st.info(f"Suggested Action: **{row['output']}**")
             st.balloons()
 
+            # Green Points popup
             popup_placeholder = st.empty()
             popup_html = f'''
-            <div style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; z-index: 9999; display: flex; align-items: center; justify-content: center; background: rgba(0,0,0,0.25);">
-                <div style="background: #eafaf1; padding: 40px 60px; border-radius: 24px; box-shadow: 0 4px 24px #b2f7cc; text-align: center;">
-                    <span style="font-size: 2.5rem; color: #27ae60; font-weight: bold;">🎉 {int(row['green_points'])} Green Points Earned! 🎉</span>
+            <div style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; z-index: 9999;
+                        display: flex; align-items: center; justify-content: center; background: rgba(0,0,0,0.25);">
+                <div style="background: #eafaf1; padding: 40px 60px; border-radius: 24px;
+                            box-shadow: 0 4px 24px #b2f7cc; text-align: center;">
+                    <span style="font-size: 2.5rem; color: #27ae60; font-weight: bold;">
+                        🎉 {int(row['green_points'])} Green Points Earned! 🎉
+                    </span>
                 </div>
             </div>
             '''

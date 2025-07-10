@@ -4,5 +4,5 @@ keras==2.15.0
 pandas==1.5.3
 numpy==1.23.5
 protobuf==3.20.3
-requests
-Pillow
+requests==2.32.4
+Pillow==10.3.0
