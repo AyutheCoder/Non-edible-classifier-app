@@ -1,0 +1,51 @@
+item_type,years_used,condition,description,image_damage,condition_score,green_points,output,image_path
+Blenders/Mixers,1,Working,"Motor works fine, jar slightly scratched",Low,0.95,93,Refurbish and Resell,data/images/blender_low.jpeg
+Blenders/Mixers,2,Repairable,"Motor works fine, jar slightly scratched",Moderate,0.67,70,Salvage Components,waste_classifier/data/images/blender_moderate.jpg
+Blenders/Mixers,3,Repairable,"Motor works fine, jar slightly scratched",High,0.45,47,Salvage Components,waste_classifier/data/images/blenders_high-1.jpeg
+Blenders/Mixers,4,Repairable,"Motor works fine, jar slightly scratched",High,0.35,41,Salvage Components,waste_classifier/data/images/blenders_high-2.jpeg
+Blenders/Mixers,5,Dead,"Motor doesn't work, jar slightly scratched",High,0.10,26,Recycle,waste_classifier/data/images/blenders_dead.png
+Electric Kettles,1,Working,"Heats well, base connector slightly loose",Moderate,0.90,98,Refurbish and Resell,waste_classifier/data/images/electric-kettle-best.jpg
+Electric Kettles,5,Repairable,"Heats well, base connector slightly loose",High,0.67,70,Salvage Components,waste_classifier/data/images/electric-kettle_worst.png
+Electric Kettles,1,Dead,"Heats well, base connector slightly loose",Low,0.45,47,Salvage Components,waste_classifier/data/images/electric kettle_moderate.png
+Electric Kettles,2,Dead,"Heats well, base connector slightly loose",Low,0.22,33,Salvage Components,waste_classifier/data/images/electric kettle_high.png
+Electric Kettles,5,Dead,"Doesn't heats, base connector slightly loose",High,0.10,26,Recycle,waste_classifier/data/images/electric kettle dead.jpeg
+Chairs,1,Working,"Minor scratches on seat, frame intact",Low,0.95,99,Refurbish and Resell,data/images/chairs_best.png
+Chairs,5,Working,"Faded color and surface wear, structurally fine",Moderate,0.65,69,Refurbish and Resell,data/images/chair_moderate.jpg
+Chairs,5,Repairable,"Backrest loose, frame stable",Low,0.58,67,Refurbish and Resell,data/images/chair_re.jpg
+Chairs,7,Dead,"Cracked seat and broken legs",Low,0.20,32,Salvage Components,data/images/chair.jpg
+Chairs,8,Dead,"Completely broken seat and legs, unusable",High,0.05,23,Recycle,data/images/dead chair.jpg
+Bags,1,Working,"Zip works fine, fabric a bit discolored",Low,0.95,99,Refurbish and Resell,waste_classifier/data/images/used-school-bags-1511867190-3484608.jpg
+Bags,3,Working,"Zip works fine, fabric a bit discolored",Moderate,0.53,66,Refurbish and Resell,waste_classifier/data/images/images.jpeg
+Bags,2,Repairable,"Zip works fine, fabric a bit discolored",Low,0.67,70,Refurbish and Resell,waste_classifier/data/images/bags_resell.jpg
+Bags,3,Repairable,"Zip works fine, fabric a bit discolored",High,0.55,66,Salvage Components,waste_classifier/data/images/bag.jpg
+Bags,5,Dead,"Zip doesn't works , fabric a bit discolored",Low,0.25,35,Recycle,waste_classifier/data/images/bag_dead.png
+Water Purifier,1,Working,"Filter is old, outer body scratched",Moderate,0.65,69,Refurbish and Resell,images/waterpurifier_working_moderate_1yrs.jpg
+Water Purifier,5,Working,"Filter is old, outer body scratched",High,0.18,31,Refurbish and Resell,images/waterpurifier_working_high_5yrs.jpg
+Water Purifier,2,Repairable,"Filter is old, outer body scratched",Low,0.67,70,Refurbish and Resell,images/waterpurifier_repairable_low_2yrs.jpg
+Water Purifier,5,Repairable,"Filter is old, outer body scratched",High,0.05,23,Salvage Components,images/waterpurifier_repairable_high_5yrs.jpg
+Water Purifier,4,Dead,"Filter is old, outer body scratched",High,0.05,23,Recycle,images/waterpurifier_dead_high_4yrs.jpg
+Lamps,2,Working,"Bulb replaced recently, minor dents on body",Low,0.92,97,Refurbish and Resell,images/lamps_working_low_2yrs.jpg
+Lamps,5,Working,"Bulb replaced recently, minor dents on body",High,0.18,31,Refurbish and Resell,images/lamps_working_high_5yrs.jpg
+Lamps,5,Repairable,"Bulb replaced recently, minor dents on body",Low,0.58,67,Refurbish and Resell,images/lamps_repairable_low_5yrs.jpg
+Lamps,4,Dead,"Bulb replaced recently, minor dents on body",Low,0.36,41,Salvage Components,images/lamps_dead_low_4yrs.jpg
+Lamps,5,Dead,"Bulb replaced recently, minor dents on body",High,0.05,23,Recycle,images/lamps_dead_high_5yrs.jpg
+Calculators,1,Working,"Buttons are responsive, screen slightly faded",Low,0.95,99,Refurbish and Resell,images/calculators_working_low_1yrs.jpg
+Calculators,5,Working,"Buttons are responsive, screen slightly faded",Moderate,0.53,66,Refurbish and Resell,images/calculators_working_moderate_5yrs.jpg
+Calculators,2,Repairable,"Buttons are responsive, screen slightly faded",Low,0.67,70,Refurbish and Resell,images/calculators_repairable_low_2yrs.jpg
+Calculators,5,Repairable,"Buttons are responsive, screen slightly faded",High,0.05,23,Salvage Components,images/calculators_repairable_high_5yrs.jpg
+Calculators,5,Dead,"Buttons are responsive, screen slightly faded",High,0.05,23,Recycle,images/calculators_dead_high_5yrs.jpg
+Plastic Toys,1,Working,"Sound working, light partially functioning",Low,0.95,99,Refurbish and Resell,images/plastictoys_working_low_1yrs.jpg
+Plastic Toys,4,Working,"Sound working, light partially functioning",Moderate,0.56,66,Refurbish and Resell,images/plastictoys_working_moderate_4yrs.jpg
+Plastic Toys,4,Repairable,"Sound working, light partially functioning",High,0.05,23,Salvage Components,images/plastictoys_repairable_high_4yrs.jpg
+Plastic Toys,4,Dead,"Sound working, light partially functioning",High,0.05,23,Recycle,images/plastictoys_dead_high_4yrs.jpg
+Plastic Toys,5,Dead,"Sound working, light partially functioning",High,0.05,23,Recycle,images/plastictoys_dead_high_5yrs.jpg
+Shoes,1,Working,"Soles intact, minor creases",Low,0.95,99,Refurbish and Resell,images/shoes_working_low_1yrs.jpg
+Shoes,3,Working,"Soles intact, minor creases",High,0.24,34,Refurbish and Resell,images/shoes_working_high_3yrs.jpg
+Shoes,2,Repairable,"Soles intact, minor creases",Moderate,0.37,61,Salvage Components,images/shoes_repairable_moderate_2yrs.jpg
+Shoes,5,Dead,"Soles intact, minor creases",Low,0.33,39,Salvage Components,images/shoes_dead_low_5yrs.jpg
+Shoes,5,Dead,"Soles intact, minor creases",High,0.05,23,Recycle,images/shoes_dead_high_5yrs.jpg
+Headphones,5,Working,"Right speaker is weak, slight crack on headband",Low,0.83,96,Refurbish and Resell,images/headphones_working_low_5yrs.jpg
+Headphones,5,Working,"Right speaker is weak, slight crack on headband",Moderate,0.53,66,Refurbish and Resell,images/headphones_working_moderate_5yrs.jpg
+Headphones,5,Repairable,"Right speaker is weak, slight crack on headband",High,0.05,23,Salvage Components,images/headphones_repairable_high_5yrs.jpg
+Headphones,4,Dead,"Right speaker is weak, slight crack on headband",Moderate,0.06,51,Recycle,images/headphones_dead_moderate_4yrs.jpg
+Headphones,5,Dead,"Right speaker is weak, slight crack on headband",High,0.05,23,Recycle,images/headphones_dead_high_5yrs.jpg
